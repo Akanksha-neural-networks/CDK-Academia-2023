@@ -73,7 +73,7 @@ except URLError as e:
     streamlit.error ()
 
 add_my_fruit = streamlit.text_input('What fruit would you like information about?')
-streamlit.write('Thanks for adding ', fruit_choice1)
+streamlit.write('Thanks for adding ', add_my_fruit)
 
 def insert_row_now(new_fruit):
   with my_cnx.cursor() as my_cur:
