@@ -72,7 +72,7 @@ try:
 except URLError as e:
     streamlit.error ()
 
-fruit_choice1 = streamlit.text_input('What fruit would you like information about?')
+add_my_fruit = streamlit.text_input('What fruit would you like information about?')
 streamlit.write('Thanks for adding ', fruit_choice1)
 
 def insert_row_now(new_fruit):
@@ -84,7 +84,7 @@ if streamlit.button('Add a fruit to the list'):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
   #my_cur = my_cnx.cursor()
   #my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
-  back_from_function = insert_row_now(fruit_choice1)
+  back_from_function = insert_row_now(add_my_fruit)
   #streamlit.text("Hello from Snowflake:")
   #streamlit.text(my_data_row)
   #my_cur.execute("select * from fruit_load_list")
